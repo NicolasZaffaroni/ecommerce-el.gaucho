@@ -1,14 +1,15 @@
+import { Box } from "@mui/material"
 import { useState } from "react"
 
-export const ItemList = ({saludo}) => {
+export const ItemList = ({chiste}) => {
 
 
 
     return (
-    <div>
+    <Box>
         <h2>item list</h2>
-        <h3>{saludo}</h3>
-    </div>
+        <h3>{chiste}</h3>
+    </Box>
 
 
 
