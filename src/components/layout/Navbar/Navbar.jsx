@@ -1,36 +1,31 @@
+import React from 'react'
+import { Container, Nav, NavDropdown, Navbar} from 'react-bootstrap'
 
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
-import { CartWidget } from "../../common/cartWidget/CartWidget"
-import { Box } from '@mui/material';
+export const NavBar = () => {
+    return (
+    <>
+        <Navbar expand="lg" className="bg-body ">
+    <Container>
+        <Navbar.Brand ><img src="https://res.cloudinary.com/dmnvvzz6y/image/upload/v1689192651/icons8-mate-50_k6bigh.png" alt="" srcset="" />Matelandia</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className=" me-auto justify-content-start">
+            
+            <Nav.Link href="#link">About</Nav.Link>
+            <NavDropdown title="Productos" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Yerbas Mate</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">
+                Bombillas
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Mates</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4">Termos</NavDropdown.Item>
+            </NavDropdown>
+        </Nav>
+        </Navbar.Collapse>
+    </Container>
+    </Navbar>
+    </>
+    )
+    }
 
 
-
-export const Navbar =( )=>{
-
-    
-    
-        return (
-        <><Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static">
-                    <Toolbar>
-                            <MenuIcon />
-                        <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
-                            Productos
-                        </Typography>
-                        <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
-                            Contacto
-                        </Typography>
-                        <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
-                            Sobre Nosotros
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-            </Box>
-            <CartWidget /></>
-        )
-        }
-        
-    
