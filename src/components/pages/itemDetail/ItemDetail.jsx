@@ -9,7 +9,7 @@ const ItemDetail = () => {
 
     const [producto,setProducto] = useState({})
 
-    const {id} = useParams
+    const {id} = useParams()
 
     useEffect(()=>{
         let productosSeleccionado = products.find((elemento)=> elemento.id=== +id)
@@ -22,22 +22,24 @@ const ItemDetail = () => {
 
 
     
-    const onAdd = (cantidad) =>{
+    /*const onAdd = (cantidad) =>{
         console.log(producto)
         console.log(cantidad)
+        <CounterContainer stock={producto.stock} onAdd={onAdd} />*/
+
+
+        return (
+            <div>
+                <h2>{producto.title}</h2>
+                
+                <h4>{producto.price}</h4>
+            </div>
+        )
     }
 
 
-return (
-    <div>
-    <h2>{producto.title}</h2>
-    <h4>{producto.price}</h4>
 
 
-    <CounterContainer stock={producto.stock} onAdd={onAdd} />
-</div>
-)
-}
 
 export default ItemDetail
 

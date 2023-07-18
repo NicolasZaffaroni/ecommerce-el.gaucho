@@ -63,7 +63,7 @@
 
         description: "Boca de 55mm interior y 70mm exterior. Largo de 100mm",
 
-        category: "Mates",
+        category: "mates",
 
         img: "https://res.cloudinary.com/dmnvvzz6y/image/upload/v1689185972/MATE_CALABZA_SIN_VIROLA_jimvv5.jpg"
 
@@ -81,7 +81,7 @@
 
         description: "Mate imperial de calabaza gruesa forrado en cuero, virola de alpaca cincelada artesanalmente",
 
-        category: "Mates",
+        category: "mates",
 
         img: "https://res.cloudinary.com/dmnvvzz6y/image/upload/v1689186139/WhatsApp-Image-2023-03-07-at-16.34.382-768x900_shapuf.jpg"
 
@@ -101,7 +101,7 @@
 
         description: "Mate forrado en cuero con virola de acero. Tipo torpedo",
 
-        category: "Mates",
+        category: "mates",
 
         img: "https://res.cloudinary.com/dmnvvzz6y/image/upload/v1689186119/torpedo_forrado_izim5o.jpg"
     },
@@ -121,7 +121,7 @@
 
         description: "Bombilla para mate acero inoxidable Amanda 15CM",
 
-        category: "Bombillas",
+        category: "bombillas",
 
         img: "https://res.cloudinary.com/dmnvvzz6y/image/upload/v1689187224/bombilla_amanda_acero_ytovjj.jpg"
     },
@@ -140,7 +140,7 @@
 
         description: "Bombilla niquelada y desarmable.",
 
-        category: "Bombillas",
+        category: "bombillas",
 
         img: "https://res.cloudinary.com/dmnvvzz6y/image/upload/v1689187235/bombilla_rulemar_larga_niq_desr_ymksmw.jpg"
     },
@@ -158,7 +158,7 @@
 
         description: "Bombilla de metal pico dorado y piedra roja El BagualLargo 19cm.",
 
-        category: "Bombillas",
+        category: "bombillas",
 
         img: "https://res.cloudinary.com/dmnvvzz6y/image/upload/v1689187261/spoon-type-bulb-gold-beak-19-cm_nuwfsq.png"
 

@@ -1,6 +1,7 @@
 
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Footer = () => {
 return (
@@ -12,15 +13,18 @@ return (
             </div>
             
         <div>
-            <a href='' className='me-4 text-reset'>
-                <MDBIcon fab icon="facebook-f" />
-            </a>
-            <a href='' className='me-4 text-reset'>
+            <Link href='' className='me-4 text-reset'>
+                <FacebookIcon  />
+            </Link>
+            <Link href='' className='me-4 text-reset'>
                 <MDBIcon fab icon="twitter" />
-            </a>
-            <a href='' className='me-4 text-reset'>
+            </Link>
+            <Link href='' className='me-4 text-reset'>
                 <MDBIcon fab icon="google" />
-            </a>
+            </Link>
+            <Link href='' className='me-4 text-reset'>
+                <MDBIcon fab icon="instagram" />
+            </Link>
             </div>
         </section>
 
@@ -29,7 +33,7 @@ return (
             <MDBRow className='mt-3'>
                 <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
                 <h6 className='text-uppercase fw-bold mb-4'>
-                    <MDBIcon icon="gem" className="me-3" />
+                    <img src="https://res.cloudinary.com/dmnvvzz6y/image/upload/v1689192651/icons8-mate-50_k6bigh.png" icon="gem" className="me-3" />
                     Matelandia
                 </h6>
                 <p>
@@ -40,19 +44,25 @@ return (
                 <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
                 <h6 className='text-uppercase fw-bold mb-4'>Productos</h6>
                 <p>
-                    <a href='#!' className='text-reset'>
+                    <Link  style={{ textDecoration: 'none' , color: 'black' }}  className='text-reset' to="/category/mates">
                     Mates
-                    </a>
+                    </Link>
                 </p>
                 <p>
-                    <a href='#!' className='text-reset'>
+                    <Link  style={{ textDecoration: 'none' , color: 'black' }}  className='text-reset' to="/category/yerbas">
                     Yerbas
-                    </a>
+                    </Link>
                 </p>
                 <p>
-                    <a href='#!' className='text-reset'>
+                    <Link style={{ textDecoration: 'none' , color: 'black' }}  className='text-reset' to="/category/bombillas">
                     Bombillas
-                    </a>
+                    </Link>
+                </p>
+
+                <p>
+                    <Link style={{ textDecoration: 'none' , color: 'black' }}   className='text-reset' to="/category/termos">
+                    Termos
+                    </Link>
                 </p>
                 </MDBCol>
 

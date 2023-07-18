@@ -1,5 +1,5 @@
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-
+import '@fortawesome/fontawesome-free/css/all.css';
 import '@fontsource/roboto/400.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ItemListContainer from './components/pages/itemList/ItemListContainer';
