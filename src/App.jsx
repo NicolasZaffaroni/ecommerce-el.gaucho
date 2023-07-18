@@ -1,10 +1,12 @@
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
-import { useState } from "react";
 import '@fontsource/roboto/400.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import ItemListContainer from "./components/pages/itemList/ItemListContainer";
-import FetchingData from "./components/pages/FetchingData/FetchingData";
-import { NavBar } from "./components/layout/Navbar/Navbar";
+import ItemListContainer from './components/pages/itemList/ItemListContainer';
+import CartContainer from './components/pages/cart/CartContainer';
+import Layout from './components/layout/Layout';
+import ItemDetail from './components/pages/itemDetail/itemDetail';
+
 
 
 
@@ -13,12 +15,19 @@ function App() {
 
 
   return (
-    <><div>
-      <NavBar />
-      <ItemListContainer />
-    </div>
-    <FetchingData /></>
-        
+  <BrowserRouter>
+    <Routes>
+      <Route  element={<Layout />}>
+            <Route  path="/" element={<ItemListContainer />} />
+            <Route  path="/category/:categoryNombre" element={<ItemListContainer />} />
+            <Route  path="/itemDetail/:id" element={<ItemDetail />} />
+            <Route path="/cart" element={<CartContainer /> } />
+      </Route>
+
+
+          <Route  path="*" element={<h1>404 not found</h1>} />
+    </Routes>
+  </BrowserRouter>
   );
 }
 

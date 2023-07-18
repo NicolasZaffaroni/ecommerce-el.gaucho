@@ -1,4 +1,5 @@
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
+import { Link } from "react-router-dom"
 
 const ProductCard = ({producto,isInItemlist}) => {
 return (
@@ -17,12 +18,9 @@ return (
                 </Typography>
                 </CardContent>
                 <CardActions>
-                    {isInItemlist ? (
+                    <Link to={`/itemDetail/${producto.id}`}>
                             <Button size="small">Ver detalles</Button>
-                        ):(
-                            <Button size="small">Eliminar del carrito</Button>
-                        )}
-                
+                    </Link>
                 </CardActions>
             </Card>
 )
