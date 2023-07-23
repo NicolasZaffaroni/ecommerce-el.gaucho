@@ -5,27 +5,7 @@ import { useParams } from 'react-router-dom'
 
 
 
-const ItemDetail = () => {
-
-    const [producto,setProducto] = useState({})
-
-    const {id} = useParams()
-
-    useEffect(()=>{
-        let productosSeleccionado = products.find((elemento)=> elemento.id=== +id)
-        const tarea = new Promise((respuesta, rej)=>{
-            respuesta(productosSeleccionado)
-        });
-        tarea.then(respuesta => setProducto(respuesta))
-    },[id]);
-    
-
-
-    
-    /*const onAdd = (cantidad) =>{
-        console.log(producto)
-        console.log(cantidad)
-        <CounterContainer stock={producto.stock} onAdd={onAdd} />*/
+const ItemDetail = ({producto}) => {
 
 
         return (
