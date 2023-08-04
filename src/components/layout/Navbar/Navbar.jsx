@@ -11,7 +11,7 @@ export const NavBar = () => {
         <Navbar.Brand ><img src="https://res.cloudinary.com/dmnvvzz6y/image/upload/v1689192651/icons8-mate-50_k6bigh.png" alt="" srcset="" /><Link to="/" style={{ textDecoration: 'none' , color: 'black'}} >Matelandia</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className=" me-auto justify-content-start">
+        <Nav className=" ms-auto justify-content-start">
             <NavDropdown title="Productos" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1"><Link style={{ textDecoration: 'none' , color: 'black'}} to="/category/yerbas">Yerba Mate</Link></NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">

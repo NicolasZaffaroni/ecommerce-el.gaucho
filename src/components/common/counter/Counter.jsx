@@ -1,13 +1,15 @@
+import { Button } from 'react-bootstrap'
 import React from 'react'
+import { ButtonToolbar, Container } from 'react-bootstrap'
 
-const Counter = ({contador,restar,sumar, onAdd}) => {
+const Counter = ({contador,restar,sumar, onAdd,}) => {
 return (
-    <div style={{border:"2px solid steelblue", padding:"40px"}}>
-        <button onClick={sumar}>Sumar</button>
+    <Container style={{ padding:"40px"}}>
+        <Button onClick={sumar}>Agregar Producto</Button>
         <h2>{contador}</h2>
-        <button onClick={restar}>Restar</button>
-        <button onClick={()=>onAdd(contador)}>Agregar al carrito</button>
-    </div>
+        <Button onClick={restar}>Quitar Producto</Button>
+        <Button onClick={()=>onAdd(contador)}>Agregar al carrito</Button>
+    </Container>
 )
 }
 

@@ -10,15 +10,15 @@ const ItemListContainer = () => {
     const[items, setItems] = useState([])
     const[error, setError] = useState("")
 
-    const {categoryNombre} = useParams()
+    const {categoryName} = useParams()
     
 
 
     useEffect( ()=>{ 
-    let productsFiltrados = products.filter( (elemento) => elemento.category === categoryNombre 
+    let productsFiltrados = products.filter( (elemento) => elemento.category === categoryName 
     );
     const tarea = new Promise((resolve, reject)=>{
-        resolve(categoryNombre === undefined ? products : productsFiltrados);
+        resolve(categoryName === undefined ? products : productsFiltrados);
         // reject("Salio mal") 
     });
 
@@ -26,7 +26,7 @@ const ItemListContainer = () => {
     .then((respuesta)=> setItems(respuesta))
     .catch((error)=> setError(error));
 }
-    ,[categoryNombre] ) ;
+    ,[categoryName] ) ;
 
 
     
