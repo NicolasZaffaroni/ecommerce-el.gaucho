@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
 import ItemDetail from './itemDetail'
 import { useParams } from 'react-router-dom'
-import { products } from '../../productsMock'
 import { CartContext } from '../../../context/CartContext'
 import Swal from 'sweetalert2'
 import {ToastContainer, toast} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
 import CounterContainer from '../../common/counter/CounterContainer'
+import { baseDatos } from '../../../firebaseConfig'
+import {getDoc, collection , doc} from "firebase/firestore"
+
+
 
 const ItemDetailContainer = () => {
 
@@ -14,18 +17,17 @@ const ItemDetailContainer = () => {
 
     const [producto,setProducto] = useState({})
 
-    const {id} = useParams()
-    
+    const { id } = useParams()
+
     const totalQuantity = getQuantityById(id)
-    console.log(totalQuantity)
 
     useEffect(()=>{
-        let productosSeleccionado = products.find((elemento)=> elemento.id=== +id)
-        const tarea = new Promise((respuesta, rej)=>{
-            respuesta(productosSeleccionado)
-        });
-        tarea.then(respuesta => setProducto(respuesta))
-    },[id]);
+        let productsCollection = collection( baseDatos, "products")
+        let productRef = doc( productsCollection, id)
+        getDoc(productRef).then(res => {
+            setProducto({...res.data(), id: res.id})
+        })
+    }, [id]);
 
 
     const onAdd = (cantidad) =>{
@@ -47,12 +49,13 @@ const ItemDetailContainer = () => {
     };
 
 
+    const initial = !totalQuantity ? 1 : totalQuantity;
 
 
     return (
 
     <><ItemDetail producto={producto} />
-    <CounterContainer stock={producto.stock} onAdd={onAdd} initial={totalQuantity}/>
+    <CounterContainer stock={producto.stock} onAdd={onAdd} initial={initial}/>
     <ToastContainer />
     </>
     )
