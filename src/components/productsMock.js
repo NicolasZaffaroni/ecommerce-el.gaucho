@@ -1,6 +1,6 @@
     export let products =[
         {
-            id: 1,
+            
 
             title: "Yerba Rosamonte",
     
@@ -17,7 +17,7 @@
         
         {
             
-        id: 2,
+        
 
         title: "Yerba Playadito",
 
@@ -34,7 +34,7 @@
         },
 
     {
-        id: 3,
+        
 
         title: "Yerba Taragui",
 
@@ -53,7 +53,7 @@
     {
         
 
-        id: 4,
+        
 
         title: "Mate calabaza ",
 
@@ -71,7 +71,7 @@
 
 
     {
-        id: 5,
+        
 
         title: "Mate imperial ",
 
@@ -91,7 +91,7 @@
 
 
     {
-        id: 6,
+        
 
         title: "Mate forrado ",
 
@@ -111,7 +111,7 @@
         
 
         
-        id: 7,
+        
 
         title: "Bombilla acero Amanda",
 
@@ -130,7 +130,7 @@
 
     {
         
-        id: 8,
+        
 
         title: "Bombilla Niquelada",
 
@@ -148,7 +148,7 @@
 
     {
         
-        id: 9,
+        
 
         title: "Bombilla de metal pico dorado",
 

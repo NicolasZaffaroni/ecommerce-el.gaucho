@@ -49,13 +49,28 @@ const ItemDetailContainer = () => {
     };
 
 
+
     const initial = !totalQuantity ? 1 : totalQuantity;
 
 
     return (
 
+        
+
     <><ItemDetail producto={producto} />
-    <CounterContainer stock={producto.stock} onAdd={onAdd} initial={initial}/>
+        {
+        (  typeof(totalQuantity) ==="undefined" || producto.stock > totalQuantity  ) &&  producto.stock > 0 && (<CounterContainer stock={producto.stock} onAdd={onAdd} initial={initial}/> )
+        }
+
+        {
+        producto.stock === 0 &&(<h2>No hay en stock actualmente</h2>)
+        }
+
+        {
+            typeof(totalQuantity) !== "undefined" && totalQuantity === producto.stock && (<h2>Tenes las cantidad maxima en el carrito </h2> ) 
+        }
+
+
     <ToastContainer />
     </>
     )

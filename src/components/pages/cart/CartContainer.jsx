@@ -3,6 +3,7 @@ import { CartContext } from "../../../context/CartContext"
 import { Button } from "react-bootstrap"
 import Swal from 'sweetalert2'
 import { Card, CardContent, CardMedia, Typography } from "@mui/material"
+import { Link } from "react-router-dom"
 
 
 const CartContainer = () => {
@@ -58,7 +59,9 @@ return (
                     </Typography>
                     </CardContent>
                     </Card>
-                    <Button onClick={()=> deleteById() }>Eliminar</Button>
+                    <Button onClick={()=> deleteById(elemento.id) }>Eliminar</Button>
+                    <h2>El precio final es :{total}</h2>  
+                    <Link to="/checkOut"> Finalizar Compra </Link>
                 </div>
                 );
                 
@@ -68,8 +71,10 @@ return (
             cart.length > 0 && <Button onClick={limpiar}>Limpiar carrito </Button>
         }
 
-        <h2>El precio final es :{total}</h2>
         
+
+
+
     </div>
 )
 }

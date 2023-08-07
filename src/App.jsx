@@ -9,6 +9,7 @@ import ItemDetailContainer from './components/pages/itemDetail/ItemDetailContain
 import CheckOutContainer from './components/pages/checkout/CheckOutContainer';
 import CartContextComponent from './context/CartContext';
 import FormularioFormik from './components/pages/FormularioFormik/FormularioFormik';
+import Dashboard from './components/pages/dashboard/Dashboard';
 
 
 
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/cart" element={<CartContainer /> } />
                 <Route path="/checkOut" element={<CheckOutContainer /> } />
                 <Route path="/formularioFormik" element={<FormularioFormik /> } />
+                <Route path="/dashboard" element={<Dashboard /> } />
           </Route>
 
 

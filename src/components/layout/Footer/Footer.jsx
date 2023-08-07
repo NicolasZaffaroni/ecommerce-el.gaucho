@@ -59,11 +59,6 @@ return (
                     </Link>
                 </p>
 
-                <p>
-                    <Link style={{ textDecoration: 'none' , color: 'black' }}   className='text-reset' to="/category/termos">
-                    Termos
-                    </Link>
-                </p>
                 </MDBCol>
 
                 <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>

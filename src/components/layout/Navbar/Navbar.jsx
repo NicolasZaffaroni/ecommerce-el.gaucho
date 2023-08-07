@@ -18,11 +18,8 @@ export const NavBar = () => {
             <Link  style={{ textDecoration: 'none', color: 'black' }} to="/category/bombillas">Bombillas</Link>
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3"><Link  style={{ textDecoration: 'none', color: 'black'}} to="/category/mates">Mates</Link></NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4"><Link style={{ textDecoration: 'none', color: 'black' }} to="/category/termos">Termos</Link></NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3"><Link style={{ textDecoration: 'none' , color: 'black'}} to="/">Todos</Link></NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#link"><Link style={{ textDecoration: 'none' , color: 'black'}} to="/contacto">Contacto</Link></Nav.Link>
-            <Nav.Link href="#link"><Link  style={{ textDecoration: 'none' , color: 'black' }}to="/about">About</Link></Nav.Link>
             <CartWidget  />
         </Nav>
         </Navbar.Collapse>

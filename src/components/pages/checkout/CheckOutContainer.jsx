@@ -1,45 +1,80 @@
 
 import { Input } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
+import { CartContext } from '../../../context/CartContext'
+import { baseDatos } from '../../../firebaseConfig'; 
+import {addDoc, collection,serverTimestamp, updateDoc, doc } from "firebase/firestore"
+import { Link } from 'react-router-dom';
 
 
 const CheckOutContainer = () => {
+
+
+    const [ orderId, setOrderId] = useState(false)
+
+    const {cart, getTotalPrice  } = useContext (CartContext)
     
-    /*const [nombre, setNombre] = useState ("")
-    const [apellido, setApellido] = useState ("")*/
+    let total = getTotalPrice()
 
     const [dataUser, setdataUser] = useState({
-        nombre: "",
-        apellido: ""
+        name:"",
+        email:"",
+        phone :"",
     })
 
     const handleSubmit = (evento)=>{
     evento.preventDefault()
-    console.log("se envio")
+    let order = {
+        buyer : dataUser,
+        items : cart,
+        total,
+        date : serverTimestamp()
     }
+    const ordersCollection = collection(baseDatos , "orders")
+    addDoc(ordersCollection, order).then(res => setOrderId(res.id))
 
-    console.log(dataUser)
+
+
+    cart.forEach((product) => {
+        updateDoc( doc(baseDatos,"products", product.id),
+        {stock: product.stock - product.quantity});
+    });
+
+    }  
+
+
+
 
     const handleChange = (evento) => {
-        setdataUser( {...dataUser, [evento.target.name]: evento.targer.value})
+        setdataUser( {...dataUser, [evento.target.name]: evento.target.value})
     };
 
 return (
     <div>
-        <h1>CheckOutContainer</h1>
+        <h1>Finalice su Compra!</h1>
 
-        <Form onSubmit={ handleSubmit } >
-            
-        <Input type="text" placeholder='Ingrese su nombre' name="nombre" onChange={handleChange} />
-        <br />
+    {orderId ? (
+                <>
+                    <h2>Gracias por su compra!</h2>
+                    <h3>Su numero de compra es : {orderId }</h3>
+                    <Link to ="/">Vuelva a comprar</Link>
+                </>) :  (
+                    <Form onSubmit={handleSubmit}>
 
-        <Input type="text" placeholder='Ingrese su apellido' name="apellido" onChange={handleChange} />
+                        <Input type="text" placeholder='Ingrese su nombre' name="name" onChange={handleChange} />
+                        <br />
 
-        <br />
+                        <Input type="email" placeholder='Ingrese su email' name="email" onChange={handleChange} />
 
-        <Button type="submit">Enviar</Button>
-        </Form>
+                        <br />
+
+                        <Input type="text" placeholder='Ingrese su telefono' name="phone" onChange={handleChange} />
+
+
+                        <Button type="submit">comprar</Button>
+                    </Form>)
+                    }
     </div>
 
 )
