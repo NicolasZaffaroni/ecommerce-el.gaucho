@@ -75,6 +75,8 @@ return (
                         <Button type="submit">comprar</Button>
                     </Form>)
                     }
+
+                    
     </div>
 
 )

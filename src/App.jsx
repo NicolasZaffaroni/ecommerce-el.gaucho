@@ -10,6 +10,7 @@ import CheckOutContainer from './components/pages/checkout/CheckOutContainer';
 import CartContextComponent from './context/CartContext';
 import FormularioFormik from './components/pages/FormularioFormik/FormularioFormik';
 import Dashboard from './components/pages/dashboard/Dashboard';
+import ProtectedRoutes from './routes/ProtectedRoutes';
 
 
 
@@ -29,12 +30,16 @@ function App() {
                 <Route path="/cart" element={<CartContainer /> } />
                 <Route path="/checkOut" element={<CheckOutContainer /> } />
                 <Route path="/formularioFormik" element={<FormularioFormik /> } />
-                <Route path="/dashboard" element={<Dashboard /> } />
+          </Route>
+
+
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/dashboard" element={<Dashboard /> } />
           </Route>
 
 
 
-          <Route  path="*" element={<h1>404 not found</h1>} />
+            <Route  path="*" element={<h1>404 not found</h1>} />
       </Routes>
     </CartContextComponent>
   </BrowserRouter>

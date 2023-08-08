@@ -4,6 +4,8 @@ import { CartWidget } from '../../common/cartWidget/CartWidget'
 import { Link, Outlet } from 'react-router-dom'
 
 export const NavBar = () => {
+
+    let userRol = "admin"
     return (
     <>
         <Navbar expand="lg" className="bg-body ">
@@ -21,6 +23,11 @@ export const NavBar = () => {
             <NavDropdown.Item href="#action/3.3"><Link style={{ textDecoration: 'none' , color: 'black'}} to="/">Todos</Link></NavDropdown.Item>
             </NavDropdown>
             <CartWidget  />
+            {
+                userRol === "admin" && <NavDropdown.Item href="#action/3.2">
+                <Link  style={{ textDecoration: 'none', color: 'black' }} to="/dashboard">ADMIN</Link>
+                </NavDropdown.Item>
+            }
         </Nav>
         </Navbar.Collapse>
         </Container>
